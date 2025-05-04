@@ -339,7 +339,10 @@ document.querySelector(".btn-giohang").addEventListener("click", function () {
 
 //thêm Vào Giỏ Hàng của nút mua ngay
 document.querySelector(".btn-muangay").addEventListener("click", function () {
-  const img = document.querySelector(".pro-img").getAttribute("src");
+  let img = document.querySelector(".pro-img").getAttribute("src");
+  if (document.querySelector("title").innerHTML == "Website giới thiệu, bán thức ăn chó mèo trực tuyến") {
+    img = img.replace(/^\.\/+/, "../");
+  }
   const title = document.querySelector(".tieude").innerText;
   const price = document.querySelector(".price").innerText;
   const quantity = parseInt(document.getElementById("sp").value);
