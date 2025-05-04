@@ -245,7 +245,7 @@ document.querySelector("#si .btn-f-sign").addEventListener("click", function () 
 document.querySelectorAll(".card").forEach(function (card) {
   card.addEventListener("click", function () {
     // Lấy thông tin từ data-*
-    const img = this.getAttribute("data-img");
+    let img = this.getAttribute("data-img");
     const title = this.getAttribute("data-title");
     const desc = this.getAttribute("data-desc");
     const type = this.getAttribute("data-type");
@@ -254,6 +254,10 @@ document.querySelectorAll(".card").forEach(function (card) {
     const fat = this.getAttribute("data-fat");
     const calcium = this.getAttribute("data-calcium");
     const omega = this.getAttribute("data-omega");
+
+    if (document.querySelector("title").innerHTML == "Website giới thiệu, bán thức ăn chó mèo trực tuyến") {
+      img = img.replace(/^(\.\.\/)+/, "./");
+    }
 
     // Gán lại nội dung trong modal
     document.querySelector(".pro-img").src = img;
