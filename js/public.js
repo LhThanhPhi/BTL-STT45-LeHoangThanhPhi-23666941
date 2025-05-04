@@ -245,7 +245,7 @@ document.querySelector("#si .btn-f-sign").addEventListener("click", function () 
 document.querySelectorAll(".card").forEach(function (card) {
   card.addEventListener("click", function () {
     // Lấy thông tin từ data-*
-    let img = this.getAttribute("data-img");
+    const img = this.getAttribute("data-img");
     const title = this.getAttribute("data-title");
     const desc = this.getAttribute("data-desc");
     const type = this.getAttribute("data-type");
@@ -256,11 +256,14 @@ document.querySelectorAll(".card").forEach(function (card) {
     const omega = this.getAttribute("data-omega");
 
     if (document.querySelector("title").innerHTML == "Website giới thiệu, bán thức ăn chó mèo trực tuyến") {
-      img = img.replace(/^(\.\.\/)+/, "./");
+      let tmpimg = this.getAttribute("data-img");
+      tmpimg = tmpimg.replace(/^(\.\.\/)+/, "./");
+      document.querySelector(".pro-img").src = tmpimg;
+    } else {
+      document.querySelector(".pro-img").src = img;
     }
 
     // Gán lại nội dung trong modal
-    document.querySelector(".pro-img").src = img;
     document.querySelector(".loaisp").textContent = "Loại Sản Phẩm : " + type;
     document.querySelector(".tieude").textContent = "Tên : " + title;
     document.querySelector(".mota").textContent = "Mô Tả : " + desc;
@@ -300,7 +303,7 @@ tru.addEventListener("click", function () {
 
 //Thêm Vào Giỏ Hàng của nút thêm vào giỏ hàng
 document.querySelector(".btn-giohang").addEventListener("click", function () {
-  const img = document.querySelector(".pro-img").getAttribute("src");
+  const img = this.getAttribute("data-img");
   const title = document.querySelector(".tieude").innerText;
   const price = document.querySelector(".price").innerText;
   const quantity = parseInt(document.getElementById("sp").value);
