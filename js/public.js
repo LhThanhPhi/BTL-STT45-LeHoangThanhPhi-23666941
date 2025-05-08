@@ -41,7 +41,7 @@ function checkHoSU() {
     spHo.innerHTML = "Giá trị hợp lệ";
   } else {
     spHo.style.color = "red";
-    spHo.innerHTML = "Họ phải viết hoa chữ cái đầu ít nhất 1 từ";
+    spHo.innerHTML = "Họ phải viết hoa chữ cái đầu  và ít nhất 1 từ";
   }
 }
 
