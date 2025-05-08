@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // regex su : sign up
 function checkTenSU() {
-  let checkTen = /^[\p{Lu}][\p{Ll}]*(?: [\p{Lu}][\p{Ll}]*)*$/u;
+  let checkTen = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
   let ten = document.querySelector(".ten-su").value;
   let spTen = document.querySelector(".sp-ten-su");
   if (checkTen.test(ten)) {
@@ -25,7 +25,7 @@ function checkTenSU() {
     spTen.innerHTML = "Giá trị hợp lệ";
   } else {
     spTen.style.color = "red";
-    spTen.innerHTML = "Tên phải là tiếng việt có dấu hoa chữ cái đầu ít nhất 1 từ";
+    spTen.innerHTML = "Tên phải viết hoa chữ cái đầu ít nhất 1 từ";
   }
 }
 
@@ -33,7 +33,7 @@ let KiemTratenSu = document.querySelector(".ten-su");
 KiemTratenSu.addEventListener("blur", checkTenSU);
 
 function checkHoSU() {
-  let checkHo = /^[\p{Lu}][\p{Ll}]*(?: [\p{Lu}][\p{Ll}]*)*$/u;
+  let checkHo = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
   let ho = document.querySelector(".ho-su").value;
   let spHo = document.querySelector(".sp-ho-su");
   if (checkHo.test(ho)) {
@@ -41,7 +41,7 @@ function checkHoSU() {
     spHo.innerHTML = "Giá trị hợp lệ";
   } else {
     spHo.style.color = "red";
-    spHo.innerHTML = "Họ phải là tiếng việt có dấu hoa chữ cái đầu ít nhất 1 từ";
+    spHo.innerHTML = "Họ phải viết hoa chữ cái đầu ít nhất 1 từ";
   }
 }
 
