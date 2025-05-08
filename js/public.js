@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // regex su : sign up
 function checkTenSU() {
-  let checkTen = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+  let checkTen = /^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/;
   let ten = document.querySelector(".ten-su").value;
   let spTen = document.querySelector(".sp-ten-su");
   if (checkTen.test(ten)) {
@@ -33,7 +33,7 @@ let KiemTratenSu = document.querySelector(".ten-su");
 KiemTratenSu.addEventListener("blur", checkTenSU);
 
 function checkHoSU() {
-  let checkHo = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+  let checkHo = /^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/;
   let ho = document.querySelector(".ho-su").value;
   let spHo = document.querySelector(".sp-ho-su");
   if (checkHo.test(ho)) {
