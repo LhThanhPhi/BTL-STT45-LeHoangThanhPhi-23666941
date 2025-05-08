@@ -25,7 +25,7 @@ function checkTenSU() {
     spTen.innerHTML = "Giá trị hợp lệ";
   } else {
     spTen.style.color = "red";
-    spTen.innerHTML = "Tên phải viết hoa chữ cái đầu ít nhất 1 từ";
+    spTen.innerHTML = "Tên phải viết hoa chữ cái đầu và ít nhất 1 từ";
   }
 }
 
